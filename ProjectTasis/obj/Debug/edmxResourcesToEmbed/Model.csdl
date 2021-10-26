@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TasisModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Siswa">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nama" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Kelas" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Alamat" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Transaksis" Relationship="Self.FK_Transaksi_Siswa" FromRole="Siswa" ToRole="Transaksi" />
+  </EntityType>
+  <EntityType Name="Transaksi">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="No_Rekening" Type="Int64" />
+    <Property Name="Tanggal" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Setoran" Type="Int64" Nullable="false" />
+    <Property Name="Penarikan" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="Siswa" Relationship="Self.FK_Transaksi_Siswa" FromRole="Transaksi" ToRole="Siswa" />
+  </EntityType>
+  <Association Name="FK_Transaksi_Siswa">
+    <End Role="Siswa" Type="Self.Siswa" Multiplicity="0..1" />
+    <End Role="Transaksi" Type="Self.Transaksi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Siswa">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Transaksi">
+        <PropertyRef Name="No_Rekening" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TasisEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Siswas" EntityType="Self.Siswa" />
+    <EntitySet Name="Transaksis" EntityType="Self.Transaksi" />
+    <AssociationSet Name="FK_Transaksi_Siswa" Association="Self.FK_Transaksi_Siswa">
+      <End Role="Siswa" EntitySet="Siswas" />
+      <End Role="Transaksi" EntitySet="Transaksis" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

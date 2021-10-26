@@ -1,0 +1,64 @@
+C:\Users\hizak\AppData\Local\Temporary Projects\ProjectTasis\bin\Debug\ProjectTasis.exe.config
+C:\Users\hizak\Documents\ProjectTasis-02\ProjectTasis\ProjectTasis\bin\Debug\ProjectTasis.exe.config
+C:\Users\hizak\Documents\ProjectTasis-02\ProjectTasis\ProjectTasis\bin\Debug\ProjectTasis.exe
+C:\Users\hizak\Documents\ProjectTasis-02\ProjectTasis\ProjectTasis\bin\Debug\ProjectTasis.pdb
+C:\Users\hizak\Documents\ProjectTasis-02\ProjectTasis\ProjectTasis\obj\Debug\ProjectTasis.Main.resources
+C:\Users\hizak\Documents\ProjectTasis-02\ProjectTasis\ProjectTasis\obj\Debug\ProjectTasis.Properties.Resources.resources
+C:\Users\hizak\Documents\ProjectTasis-02\ProjectTasis\ProjectTasis\obj\Debug\ProjectTasis.csproj.GenerateResource.cache
+C:\Users\hizak\Documents\ProjectTasis-02\ProjectTasis\ProjectTasis\obj\Debug\ProjectTasis.exe
+C:\Users\hizak\Documents\ProjectTasis-02\ProjectTasis\ProjectTasis\obj\Debug\ProjectTasis.pdb
+C:\Users\hizak\Documents\ProjectTasis-02\ProjectTasis\ProjectTasis\obj\Debug\ProjectTasis.csprojResolveAssemblyReference.cache
+C:\Users\hizak\Documents\ProjectTasis-02\ProjectTasis\ProjectTasis\obj\Debug\ProjectTasis.InsideForm.HapusSiswa.resources
+C:\Users\hizak\Documents\ProjectTasis-02\ProjectTasis\ProjectTasis\obj\Debug\ProjectTasis.InsideForm.Transaksi.resources
+C:\Users\hizak\Documents\ProjectTasis-02\ProjectTasis\ProjectTasis\obj\Debug\ProjectTasis.InsideForm.DataSiswa.resources
+C:\Users\hizak\Documents\ProjectTasis-02\ProjectTasis\ProjectTasis\obj\Debug\ProjectTasis.InsideForm.Transaksi01.resources
+C:\Users\hizak\Documents\ProjectTasis-02\ProjectTasis\ProjectTasis\obj\Debug\ProjectTasis.InsideForm.SiswaADD.resources
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\bin\Debug\ProjectTasis.exe.config
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\obj\Debug\ProjectTasis.exe
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\obj\Debug\ProjectTasis.pdb
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\bin\Debug\ProjectTasis.exe
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\bin\Debug\ProjectTasis.pdb
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\obj\Debug\ProjectTasis.InsideForm.ImportData.resources
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\obj\Debug\ProjectTasis.Main.resources
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\obj\Debug\ProjectTasis.Properties.Resources.resources
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\obj\Debug\ProjectTasis.csproj.GenerateResource.Cache
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\obj\Debug\ProjectTasis.InsideForm.DetailTransaksi.resources
+C:\Users\hizak\Downloads\ProjectTasisNewGen-main\ProjectTasisNewGen-main\ProjectTasis\bin\Debug\ProjectTasis.exe.config
+C:\Users\hizak\Downloads\ProjectTasisNewGen-main\ProjectTasisNewGen-main\ProjectTasis\obj\Debug\ProjectTasis.exe
+C:\Users\hizak\Downloads\ProjectTasisNewGen-main\ProjectTasisNewGen-main\ProjectTasis\obj\Debug\ProjectTasis.pdb
+C:\Users\hizak\Downloads\ProjectTasisNewGen-main\ProjectTasisNewGen-main\ProjectTasis\obj\Debug\ProjectTasis.InsideForm.DataSiswa.resources
+C:\Users\hizak\Downloads\ProjectTasisNewGen-main\ProjectTasisNewGen-main\ProjectTasis\obj\Debug\ProjectTasis.InsideForm.DetailTransaksi.resources
+C:\Users\hizak\Downloads\ProjectTasisNewGen-main\ProjectTasisNewGen-main\ProjectTasis\obj\Debug\ProjectTasis.InsideForm.ImportData.resources
+C:\Users\hizak\Downloads\ProjectTasisNewGen-main\ProjectTasisNewGen-main\ProjectTasis\obj\Debug\ProjectTasis.InsideForm.Transaksi.resources
+C:\Users\hizak\Downloads\ProjectTasisNewGen-main\ProjectTasisNewGen-main\ProjectTasis\obj\Debug\ProjectTasis.Main.resources
+C:\Users\hizak\Downloads\ProjectTasisNewGen-main\ProjectTasisNewGen-main\ProjectTasis\obj\Debug\ProjectTasis.Properties.Resources.resources
+C:\Users\hizak\Downloads\ProjectTasisNewGen-main\ProjectTasisNewGen-main\ProjectTasis\obj\Debug\ProjectTasis.csproj.GenerateResource.Cache
+C:\Users\hizak\Downloads\ProjectTasisNewGen-main\ProjectTasisNewGen-main\ProjectTasis\bin\Debug\ProjectTasis.exe
+C:\Users\hizak\Downloads\ProjectTasisNewGen-main\ProjectTasisNewGen-main\ProjectTasis\bin\Debug\ProjectTasis.pdb
+C:\Users\hizak\Downloads\ProjectTasisNewGen-main\ProjectTasisNewGen-main\ProjectTasis\obj\Debug\ProjectTasis.csproj.CoreCompileInputs.cache
+C:\Users\hizak\Downloads\ProjectTasisNewGen-main\ProjectTasisNewGen-main\ProjectTasis\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\hizak\Downloads\ProjectTasisNewGen-main\ProjectTasisNewGen-main\ProjectTasis\bin\Debug\ExcelDataReader.dll
+C:\Users\hizak\Downloads\ProjectTasisNewGen-main\ProjectTasisNewGen-main\ProjectTasis\bin\Debug\ExcelDataReader.pdb
+C:\Users\hizak\Downloads\ProjectTasisNewGen-main\ProjectTasisNewGen-main\ProjectTasis\bin\Debug\ExcelDataReader.xml
+C:\Users\hizak\Downloads\ProjectTasisNewGen-main\ProjectTasisNewGen-main\ProjectTasis\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\hizak\Downloads\ProjectTasisNewGen-main\ProjectTasisNewGen-main\ProjectTasis\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\hizak\Downloads\ProjectTasisNewGen-main\ProjectTasisNewGen-main\ProjectTasis\obj\Debug\ProjectTasis.csproj.CopyComplete
+C:\Users\hizak\Downloads\ProjectTasisNewGen-main\ProjectTasisNewGen-main\ProjectTasis\bin\Debug\Z.Dapper.Plus.dll
+C:\Users\hizak\Downloads\ProjectTasisNewGen-main\ProjectTasisNewGen-main\ProjectTasis\bin\Debug\Z.Dapper.Plus.xml
+C:\Users\hizak\Downloads\ProjectTasisNewGen-main\ProjectTasisNewGen-main\ProjectTasis\obj\Debug\ProjectTasis.csprojAssemblyReference.cache
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\bin\Debug\ExcelDataReader.dll
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\bin\Debug\Z.Dapper.Plus.dll
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\bin\Debug\ExcelDataReader.pdb
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\bin\Debug\ExcelDataReader.xml
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\bin\Debug\Z.Dapper.Plus.xml
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\obj\Debug\ProjectTasis.csproj.CoreCompileInputs.cache
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\obj\Debug\ProjectTasis.csproj.CopyComplete
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\obj\Debug\ProjectTasis.InsideForm.TambahSiswa.resources
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\bin\Debug\EntityFramework.dll
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\bin\Debug\EntityFramework.xml
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\obj\Debug\ProjectTasis.InsideForm.TransaksiTabungan.resources

@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TasisModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Siswa">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nama" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Kelas" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Alamat" Type="varchar" MaxLength="300" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Transaksi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="No_Rekening" Type="bigint" />
+          <Property Name="Tanggal" Type="date" Nullable="false" />
+          <Property Name="Setoran" Type="bigint" Nullable="false" />
+          <Property Name="Penarikan" Type="bigint" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Transaksi_Siswa">
+          <End Role="Siswa" Type="Self.Siswa" Multiplicity="0..1" />
+          <End Role="Transaksi" Type="Self.Transaksi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Siswa">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Transaksi">
+              <PropertyRef Name="No_Rekening" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TasisModelStoreContainer">
+          <EntitySet Name="Siswa" EntityType="Self.Siswa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transaksi" EntityType="Self.Transaksi" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Transaksi_Siswa" Association="Self.FK_Transaksi_Siswa">
+            <End Role="Siswa" EntitySet="Siswa" />
+            <End Role="Transaksi" EntitySet="Transaksi" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TasisModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Siswa">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nama" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Kelas" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Alamat" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Transaksis" Relationship="Self.FK_Transaksi_Siswa" FromRole="Siswa" ToRole="Transaksi" />
+        </EntityType>
+        <EntityType Name="Transaksi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="No_Rekening" Type="Int64" />
+          <Property Name="Tanggal" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Setoran" Type="Int64" Nullable="false" />
+          <Property Name="Penarikan" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Siswa" Relationship="Self.FK_Transaksi_Siswa" FromRole="Transaksi" ToRole="Siswa" />
+        </EntityType>
+        <Association Name="FK_Transaksi_Siswa">
+          <End Role="Siswa" Type="Self.Siswa" Multiplicity="0..1" />
+          <End Role="Transaksi" Type="Self.Transaksi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Siswa">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Transaksi">
+              <PropertyRef Name="No_Rekening" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TasisEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Siswas" EntityType="Self.Siswa" />
+          <EntitySet Name="Transaksis" EntityType="Self.Transaksi" />
+          <AssociationSet Name="FK_Transaksi_Siswa" Association="Self.FK_Transaksi_Siswa">
+            <End Role="Siswa" EntitySet="Siswas" />
+            <End Role="Transaksi" EntitySet="Transaksis" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TasisModelStoreContainer" CdmEntityContainer="TasisEntities">
+          <EntitySetMapping Name="Siswas">
+            <EntityTypeMapping TypeName="TasisModel.Siswa">
+              <MappingFragment StoreEntitySet="Siswa">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Nama" ColumnName="Nama" />
+                <ScalarProperty Name="Kelas" ColumnName="Kelas" />
+                <ScalarProperty Name="Alamat" ColumnName="Alamat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transaksis">
+            <EntityTypeMapping TypeName="TasisModel.Transaksi">
+              <MappingFragment StoreEntitySet="Transaksi">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="No_Rekening" ColumnName="No_Rekening" />
+                <ScalarProperty Name="Tanggal" ColumnName="Tanggal" />
+                <ScalarProperty Name="Setoran" ColumnName="Setoran" />
+                <ScalarProperty Name="Penarikan" ColumnName="Penarikan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

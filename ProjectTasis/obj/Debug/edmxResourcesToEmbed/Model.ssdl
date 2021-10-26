@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TasisModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Siswa">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nama" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Kelas" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Alamat" Type="varchar" MaxLength="300" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Transaksi">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="No_Rekening" Type="bigint" />
+    <Property Name="Tanggal" Type="date" Nullable="false" />
+    <Property Name="Setoran" Type="bigint" Nullable="false" />
+    <Property Name="Penarikan" Type="bigint" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Transaksi_Siswa">
+    <End Role="Siswa" Type="Self.Siswa" Multiplicity="0..1" />
+    <End Role="Transaksi" Type="Self.Transaksi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Siswa">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Transaksi">
+        <PropertyRef Name="No_Rekening" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TasisModelStoreContainer">
+    <EntitySet Name="Siswa" EntityType="Self.Siswa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transaksi" EntityType="Self.Transaksi" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Transaksi_Siswa" Association="Self.FK_Transaksi_Siswa">
+      <End Role="Siswa" EntitySet="Siswa" />
+      <End Role="Transaksi" EntitySet="Transaksi" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
