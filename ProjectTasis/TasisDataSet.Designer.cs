@@ -329,6 +329,8 @@ namespace ProjectTasis {
             
             private global::System.Data.DataColumn columnAlamat;
             
+            private global::System.Data.DataColumn columnSaldo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SiswaDataTable() {
@@ -396,6 +398,14 @@ namespace ProjectTasis {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SaldoColumn {
+                get {
+                    return this.columnSaldo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -431,13 +441,14 @@ namespace ProjectTasis {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SiswaRow AddSiswaRow(string Nama, string Kelas, string Alamat) {
+            public SiswaRow AddSiswaRow(string Nama, string Kelas, string Alamat, long Saldo) {
                 SiswaRow rowSiswaRow = ((SiswaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Nama,
                         Kelas,
-                        Alamat};
+                        Alamat,
+                        Saldo};
                 rowSiswaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSiswaRow);
                 return rowSiswaRow;
@@ -471,6 +482,7 @@ namespace ProjectTasis {
                 this.columnNama = base.Columns["Nama"];
                 this.columnKelas = base.Columns["Kelas"];
                 this.columnAlamat = base.Columns["Alamat"];
+                this.columnSaldo = base.Columns["Saldo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -484,6 +496,8 @@ namespace ProjectTasis {
                 base.Columns.Add(this.columnKelas);
                 this.columnAlamat = new global::System.Data.DataColumn("Alamat", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAlamat);
+                this.columnSaldo = new global::System.Data.DataColumn("Saldo", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSaldo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -641,6 +655,8 @@ namespace ProjectTasis {
             
             private global::System.Data.DataColumn columnPenarikan;
             
+            private global::System.Data.DataColumn columnSaldo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public TransaksiDataTable() {
@@ -716,6 +732,14 @@ namespace ProjectTasis {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SaldoColumn {
+                get {
+                    return this.columnSaldo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -751,14 +775,15 @@ namespace ProjectTasis {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TransaksiRow AddTransaksiRow(SiswaRow parentSiswaRowByFK_Transaksi_Siswa, System.DateTime Tanggal, long Setoran, long Penarikan) {
+            public TransaksiRow AddTransaksiRow(SiswaRow parentSiswaRowByFK_Transaksi_Siswa, System.DateTime Tanggal, long Setoran, long Penarikan, long Saldo) {
                 TransaksiRow rowTransaksiRow = ((TransaksiRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         Tanggal,
                         Setoran,
-                        Penarikan};
+                        Penarikan,
+                        Saldo};
                 if ((parentSiswaRowByFK_Transaksi_Siswa != null)) {
                     columnValuesArray[1] = parentSiswaRowByFK_Transaksi_Siswa[0];
                 }
@@ -796,6 +821,7 @@ namespace ProjectTasis {
                 this.columnTanggal = base.Columns["Tanggal"];
                 this.columnSetoran = base.Columns["Setoran"];
                 this.columnPenarikan = base.Columns["Penarikan"];
+                this.columnSaldo = base.Columns["Saldo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -811,6 +837,8 @@ namespace ProjectTasis {
                 base.Columns.Add(this.columnSetoran);
                 this.columnPenarikan = new global::System.Data.DataColumn("Penarikan", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPenarikan);
+                this.columnSaldo = new global::System.Data.DataColumn("Saldo", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSaldo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -822,6 +850,7 @@ namespace ProjectTasis {
                 this.columnTanggal.AllowDBNull = false;
                 this.columnSetoran.AllowDBNull = false;
                 this.columnPenarikan.AllowDBNull = false;
+                this.columnSaldo.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1008,6 +1037,34 @@ namespace ProjectTasis {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long Saldo {
+                get {
+                    try {
+                        return ((long)(this[this.tableSiswa.SaldoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Saldo\' in table \'Siswa\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSiswa.SaldoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSaldoNull() {
+                return this.IsNull(this.tableSiswa.SaldoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSaldoNull() {
+                this[this.tableSiswa.SaldoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public TransaksiRow[] GetTransaksiRows() {
                 if ((this.Table.ChildRelations["FK_Transaksi_Siswa"] == null)) {
                     return new TransaksiRow[0];
@@ -1094,6 +1151,22 @@ namespace ProjectTasis {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long Saldo {
+                get {
+                    try {
+                        return ((long)(this[this.tableTransaksi.SaldoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Saldo\' in table \'Transaksi\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTransaksi.SaldoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SiswaRow SiswaRow {
                 get {
                     return ((SiswaRow)(this.GetParentRow(this.Table.ParentRelations["FK_Transaksi_Siswa"])));
@@ -1113,6 +1186,18 @@ namespace ProjectTasis {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetNo_RekeningNull() {
                 this[this.tableTransaksi.No_RekeningColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSaldoNull() {
+                return this.IsNull(this.tableTransaksi.SaldoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSaldoNull() {
+                this[this.tableTransaksi.SaldoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1313,36 +1398,45 @@ namespace ProjectTasis.TasisDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Nama", "Nama");
             tableMapping.ColumnMappings.Add("Kelas", "Kelas");
             tableMapping.ColumnMappings.Add("Alamat", "Alamat");
+            tableMapping.ColumnMappings.Add("Saldo", "Saldo");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Siswa] WHERE (([ID] = @Original_ID) AND ([Nama] = @Original_Na" +
-                "ma) AND ([Kelas] = @Original_Kelas) AND ([Alamat] = @Original_Alamat))";
+                "ma) AND ([Kelas] = @Original_Kelas) AND ([Alamat] = @Original_Alamat) AND ((@IsN" +
+                "ull_Saldo = 1 AND [Saldo] IS NULL) OR ([Saldo] = @Original_Saldo)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nama", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nama", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kelas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kelas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Alamat", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Alamat", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Saldo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Saldo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Saldo", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Saldo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Siswa] ([Nama], [Kelas], [Alamat]) VALUES (@Nama, @Kelas, @Ala" +
-                "mat);\r\nSELECT ID, Nama, Kelas, Alamat FROM Siswa WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Siswa] ([Nama], [Kelas], [Alamat], [Saldo]) VALUES (@Nama, @Ke" +
+                "las, @Alamat, @Saldo);\r\nSELECT ID, Nama, Kelas, Alamat, Saldo FROM Siswa WHERE (" +
+                "ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nama", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nama", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kelas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kelas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Alamat", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Alamat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Saldo", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Saldo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Siswa] SET [Nama] = @Nama, [Kelas] = @Kelas, [Alamat] = @Alamat WHERE (([ID] = @Original_ID) AND ([Nama] = @Original_Nama) AND ([Kelas] = @Original_Kelas) AND ([Alamat] = @Original_Alamat));
-SELECT ID, Nama, Kelas, Alamat FROM Siswa WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Siswa] SET [Nama] = @Nama, [Kelas] = @Kelas, [Alamat] = @Alamat, [Saldo] = @Saldo WHERE (([ID] = @Original_ID) AND ([Nama] = @Original_Nama) AND ([Kelas] = @Original_Kelas) AND ([Alamat] = @Original_Alamat) AND ((@IsNull_Saldo = 1 AND [Saldo] IS NULL) OR ([Saldo] = @Original_Saldo)));
+SELECT ID, Nama, Kelas, Alamat, Saldo FROM Siswa WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nama", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nama", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kelas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kelas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Alamat", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Alamat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Saldo", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Saldo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nama", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nama", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kelas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kelas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Alamat", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Alamat", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Saldo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Saldo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Saldo", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Saldo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -1359,7 +1453,7 @@ SELECT ID, Nama, Kelas, Alamat FROM Siswa WHERE (ID = @ID)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, Nama, Kelas, Alamat FROM dbo.Siswa";
+            this._commandCollection[0].CommandText = "SELECT ID, Nama, Kelas, Alamat, Saldo FROM dbo.Siswa";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1420,7 +1514,7 @@ SELECT ID, Nama, Kelas, Alamat FROM Siswa WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_ID, string Original_Nama, string Original_Kelas, string Original_Alamat) {
+        public virtual int Delete(long Original_ID, string Original_Nama, string Original_Kelas, string Original_Alamat, global::System.Nullable<long> Original_Saldo) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_ID));
             if ((Original_Nama == null)) {
                 throw new global::System.ArgumentNullException("Original_Nama");
@@ -1439,6 +1533,14 @@ SELECT ID, Nama, Kelas, Alamat FROM Siswa WHERE (ID = @ID)";
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Alamat));
+            }
+            if ((Original_Saldo.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((long)(Original_Saldo.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1460,7 +1562,7 @@ SELECT ID, Nama, Kelas, Alamat FROM Siswa WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Nama, string Kelas, string Alamat) {
+        public virtual int Insert(string Nama, string Kelas, string Alamat, global::System.Nullable<long> Saldo) {
             if ((Nama == null)) {
                 throw new global::System.ArgumentNullException("Nama");
             }
@@ -1478,6 +1580,12 @@ SELECT ID, Nama, Kelas, Alamat FROM Siswa WHERE (ID = @ID)";
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Alamat));
+            }
+            if ((Saldo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((long)(Saldo.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1499,7 +1607,7 @@ SELECT ID, Nama, Kelas, Alamat FROM Siswa WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nama, string Kelas, string Alamat, long Original_ID, string Original_Nama, string Original_Kelas, string Original_Alamat, long ID) {
+        public virtual int Update(string Nama, string Kelas, string Alamat, global::System.Nullable<long> Saldo, long Original_ID, string Original_Nama, string Original_Kelas, string Original_Alamat, global::System.Nullable<long> Original_Saldo, long ID) {
             if ((Nama == null)) {
                 throw new global::System.ArgumentNullException("Nama");
             }
@@ -1518,26 +1626,40 @@ SELECT ID, Nama, Kelas, Alamat FROM Siswa WHERE (ID = @ID)";
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Alamat));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((long)(Original_ID));
+            if ((Saldo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((long)(Saldo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((long)(Original_ID));
             if ((Original_Nama == null)) {
                 throw new global::System.ArgumentNullException("Original_Nama");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Nama));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Nama));
             }
             if ((Original_Kelas == null)) {
                 throw new global::System.ArgumentNullException("Original_Kelas");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Kelas));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Kelas));
             }
             if ((Original_Alamat == null)) {
                 throw new global::System.ArgumentNullException("Original_Alamat");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Alamat));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Alamat));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((long)(ID));
+            if ((Original_Saldo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((long)(Original_Saldo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((long)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1558,8 +1680,8 @@ SELECT ID, Nama, Kelas, Alamat FROM Siswa WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nama, string Kelas, string Alamat, long Original_ID, string Original_Nama, string Original_Kelas, string Original_Alamat) {
-            return this.Update(Nama, Kelas, Alamat, Original_ID, Original_Nama, Original_Kelas, Original_Alamat, Original_ID);
+        public virtual int Update(string Nama, string Kelas, string Alamat, global::System.Nullable<long> Saldo, long Original_ID, string Original_Nama, string Original_Kelas, string Original_Alamat, global::System.Nullable<long> Original_Saldo) {
+            return this.Update(Nama, Kelas, Alamat, Saldo, Original_ID, Original_Nama, Original_Kelas, Original_Alamat, Original_Saldo, Original_ID);
         }
     }
     
@@ -1689,10 +1811,11 @@ SELECT ID, Nama, Kelas, Alamat FROM Siswa WHERE (ID = @ID)";
             tableMapping.ColumnMappings.Add("Tanggal", "Tanggal");
             tableMapping.ColumnMappings.Add("Setoran", "Setoran");
             tableMapping.ColumnMappings.Add("Penarikan", "Penarikan");
+            tableMapping.ColumnMappings.Add("Saldo", "Saldo");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Transaksi] WHERE (([ID] = @Original_ID) AND ((@IsNull_No_Rekening = 1 AND [No_Rekening] IS NULL) OR ([No_Rekening] = @Original_No_Rekening)) AND ([Tanggal] = @Original_Tanggal) AND ([Setoran] = @Original_Setoran) AND ([Penarikan] = @Original_Penarikan))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Transaksi] WHERE (([ID] = @Original_ID) AND ((@IsNull_No_Rekening = 1 AND [No_Rekening] IS NULL) OR ([No_Rekening] = @Original_No_Rekening)) AND ([Tanggal] = @Original_Tanggal) AND ([Setoran] = @Original_Setoran) AND ([Penarikan] = @Original_Penarikan) AND ((@IsNull_Saldo = 1 AND [Saldo] IS NULL) OR ([Saldo] = @Original_Saldo)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_No_Rekening", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "No_Rekening", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1700,11 +1823,13 @@ SELECT ID, Nama, Kelas, Alamat FROM Siswa WHERE (ID = @ID)";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tanggal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tanggal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Setoran", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Setoran", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Penarikan", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Penarikan", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Saldo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Saldo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Saldo", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Saldo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Transaksi] ([No_Rekening], [Tanggal], [Setoran], [Penarikan]) " +
                 "VALUES (@No_Rekening, @Tanggal, @Setoran, @Penarikan);\r\nSELECT ID, No_Rekening, " +
-                "Tanggal, Setoran, Penarikan FROM Transaksi WHERE (ID = SCOPE_IDENTITY())";
+                "Tanggal, Setoran, Penarikan, Saldo FROM Transaksi WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@No_Rekening", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "No_Rekening", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tanggal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tanggal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1712,8 +1837,8 @@ SELECT ID, Nama, Kelas, Alamat FROM Siswa WHERE (ID = @ID)";
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Penarikan", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Penarikan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Transaksi] SET [No_Rekening] = @No_Rekening, [Tanggal] = @Tanggal, [Setoran] = @Setoran, [Penarikan] = @Penarikan WHERE (([ID] = @Original_ID) AND ((@IsNull_No_Rekening = 1 AND [No_Rekening] IS NULL) OR ([No_Rekening] = @Original_No_Rekening)) AND ([Tanggal] = @Original_Tanggal) AND ([Setoran] = @Original_Setoran) AND ([Penarikan] = @Original_Penarikan));
-SELECT ID, No_Rekening, Tanggal, Setoran, Penarikan FROM Transaksi WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Transaksi] SET [No_Rekening] = @No_Rekening, [Tanggal] = @Tanggal, [Setoran] = @Setoran, [Penarikan] = @Penarikan WHERE (([ID] = @Original_ID) AND ((@IsNull_No_Rekening = 1 AND [No_Rekening] IS NULL) OR ([No_Rekening] = @Original_No_Rekening)) AND ([Tanggal] = @Original_Tanggal) AND ([Setoran] = @Original_Setoran) AND ([Penarikan] = @Original_Penarikan) AND ((@IsNull_Saldo = 1 AND [Saldo] IS NULL) OR ([Saldo] = @Original_Saldo)));
+SELECT ID, No_Rekening, Tanggal, Setoran, Penarikan, Saldo FROM Transaksi WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@No_Rekening", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "No_Rekening", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tanggal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tanggal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1725,6 +1850,8 @@ SELECT ID, No_Rekening, Tanggal, Setoran, Penarikan FROM Transaksi WHERE (ID = @
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tanggal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tanggal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Setoran", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Setoran", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Penarikan", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Penarikan", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Saldo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Saldo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Saldo", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Saldo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -1741,7 +1868,7 @@ SELECT ID, No_Rekening, Tanggal, Setoran, Penarikan FROM Transaksi WHERE (ID = @
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, No_Rekening, Tanggal, Setoran, Penarikan FROM dbo.Transaksi";
+            this._commandCollection[0].CommandText = "SELECT ID, No_Rekening, Tanggal, Setoran, Penarikan, Saldo FROM dbo.Transaksi";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1802,7 +1929,7 @@ SELECT ID, No_Rekening, Tanggal, Setoran, Penarikan FROM Transaksi WHERE (ID = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, global::System.Nullable<long> Original_No_Rekening, System.DateTime Original_Tanggal, long Original_Setoran, long Original_Penarikan) {
+        public virtual int Delete(int Original_ID, global::System.Nullable<long> Original_No_Rekening, System.DateTime Original_Tanggal, long Original_Setoran, long Original_Penarikan, global::System.Nullable<long> Original_Saldo) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             if ((Original_No_Rekening.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -1815,6 +1942,14 @@ SELECT ID, No_Rekening, Tanggal, Setoran, Penarikan FROM Transaksi WHERE (ID = @
             this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_Tanggal));
             this.Adapter.DeleteCommand.Parameters[4].Value = ((long)(Original_Setoran));
             this.Adapter.DeleteCommand.Parameters[5].Value = ((long)(Original_Penarikan));
+            if ((Original_Saldo.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((long)(Original_Saldo.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1865,7 +2000,7 @@ SELECT ID, No_Rekening, Tanggal, Setoran, Penarikan FROM Transaksi WHERE (ID = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<long> No_Rekening, System.DateTime Tanggal, long Setoran, long Penarikan, int Original_ID, global::System.Nullable<long> Original_No_Rekening, System.DateTime Original_Tanggal, long Original_Setoran, long Original_Penarikan, int ID) {
+        public virtual int Update(global::System.Nullable<long> No_Rekening, System.DateTime Tanggal, long Setoran, long Penarikan, int Original_ID, global::System.Nullable<long> Original_No_Rekening, System.DateTime Original_Tanggal, long Original_Setoran, long Original_Penarikan, global::System.Nullable<long> Original_Saldo, int ID) {
             if ((No_Rekening.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(No_Rekening.Value));
             }
@@ -1887,7 +2022,15 @@ SELECT ID, No_Rekening, Tanggal, Setoran, Penarikan FROM Transaksi WHERE (ID = @
             this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_Tanggal));
             this.Adapter.UpdateCommand.Parameters[8].Value = ((long)(Original_Setoran));
             this.Adapter.UpdateCommand.Parameters[9].Value = ((long)(Original_Penarikan));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(ID));
+            if ((Original_Saldo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((long)(Original_Saldo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1908,8 +2051,8 @@ SELECT ID, No_Rekening, Tanggal, Setoran, Penarikan FROM Transaksi WHERE (ID = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<long> No_Rekening, System.DateTime Tanggal, long Setoran, long Penarikan, int Original_ID, global::System.Nullable<long> Original_No_Rekening, System.DateTime Original_Tanggal, long Original_Setoran, long Original_Penarikan) {
-            return this.Update(No_Rekening, Tanggal, Setoran, Penarikan, Original_ID, Original_No_Rekening, Original_Tanggal, Original_Setoran, Original_Penarikan, Original_ID);
+        public virtual int Update(global::System.Nullable<long> No_Rekening, System.DateTime Tanggal, long Setoran, long Penarikan, int Original_ID, global::System.Nullable<long> Original_No_Rekening, System.DateTime Original_Tanggal, long Original_Setoran, long Original_Penarikan, global::System.Nullable<long> Original_Saldo) {
+            return this.Update(No_Rekening, Tanggal, Setoran, Penarikan, Original_ID, Original_No_Rekening, Original_Tanggal, Original_Setoran, Original_Penarikan, Original_Saldo, Original_ID);
         }
     }
     

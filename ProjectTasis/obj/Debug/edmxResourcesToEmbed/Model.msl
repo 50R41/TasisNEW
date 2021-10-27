@@ -8,6 +8,7 @@
           <ScalarProperty Name="Nama" ColumnName="Nama" />
           <ScalarProperty Name="Kelas" ColumnName="Kelas" />
           <ScalarProperty Name="Alamat" ColumnName="Alamat" />
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -19,6 +20,7 @@
           <ScalarProperty Name="Tanggal" ColumnName="Tanggal" />
           <ScalarProperty Name="Setoran" ColumnName="Setoran" />
           <ScalarProperty Name="Penarikan" ColumnName="Penarikan" />
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

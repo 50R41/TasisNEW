@@ -41,7 +41,7 @@
             this.btnCetak.BackColor = System.Drawing.SystemColors.Control;
             this.btnCetak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCetak.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCetak.Location = new System.Drawing.Point(396, 30);
+            this.btnCetak.Location = new System.Drawing.Point(376, 30);
             this.btnCetak.Name = "btnCetak";
             this.btnCetak.Size = new System.Drawing.Size(47, 23);
             this.btnCetak.TabIndex = 42;
@@ -59,7 +59,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(0, 81);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(539, 279);
+            this.dataGridView1.Size = new System.Drawing.Size(499, 244);
             this.dataGridView1.TabIndex = 41;
             // 
             // txtCari
@@ -67,7 +67,7 @@
             this.txtCari.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtCari.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtCari.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtCari.Location = new System.Drawing.Point(91, 32);
+            this.txtCari.Location = new System.Drawing.Point(71, 32);
             this.txtCari.Name = "txtCari";
             this.txtCari.Size = new System.Drawing.Size(251, 20);
             this.txtCari.TabIndex = 40;
@@ -78,7 +78,7 @@
             this.btnCariNama.BackColor = System.Drawing.SystemColors.Control;
             this.btnCariNama.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCariNama.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCariNama.Location = new System.Drawing.Point(348, 30);
+            this.btnCariNama.Location = new System.Drawing.Point(328, 30);
             this.btnCariNama.Name = "btnCariNama";
             this.btnCariNama.Size = new System.Drawing.Size(42, 24);
             this.btnCariNama.TabIndex = 43;
@@ -90,7 +90,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(539, 360);
+            this.ClientSize = new System.Drawing.Size(499, 325);
             this.Controls.Add(this.btnCariNama);
             this.Controls.Add(this.btnCetak);
             this.Controls.Add(this.dataGridView1);

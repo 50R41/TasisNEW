@@ -40,12 +40,6 @@ namespace ProjectTasis.InsideForm
         {
             // TODO: This line of code loads data into the 'tasisDataSet.Siswa' table. You can move, or remove it, as needed.
             this.siswaTableAdapter.Fill(this.tasisDataSet.Siswa);
-            // TODO: This line of code loads data into the 'tasisDataSet.Siswa' table. You can move, or remove it, as needed.
-            this.siswaTableAdapter.Fill(this.tasisDataSet.Siswa);
-            // TODO: This line of code loads data into the 'tasisDataSet.Siswa' table. You can move, or remove it, as needed.
-            this.siswaTableAdapter.Fill(this.tasisDataSet.Siswa);
-            // TODO: This line of code loads data into the 'tasisDataSet.Siswa' table. You can move, or remove it, as needed.
-            this.siswaTableAdapter.Fill(this.tasisDataSet.Siswa);
             LoadTheme();
         }
 

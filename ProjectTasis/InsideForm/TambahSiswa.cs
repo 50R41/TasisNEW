@@ -67,10 +67,6 @@ namespace ProjectTasis.InsideForm
         {
             // TODO: This line of code loads data into the 'tasisDataSet.Siswa' table. You can move, or remove it, as needed.
             this.siswaTableAdapter.Fill(this.tasisDataSet.Siswa);
-            // TODO: This line of code loads data into the 'tasisDataSet.Siswa' table. You can move, or remove it, as needed.
-            this.siswaTableAdapter.Fill(this.tasisDataSet.Siswa);
-            // TODO: This line of code loads data into the 'tasisDataSet.Siswa' table. You can move, or remove it, as needed.
-            this.siswaTableAdapter.Fill(this.tasisDataSet.Siswa);
             panel.Enabled = false;
             btnSimpan.Visible = false;
             btnCancel.Visible = false;
@@ -161,12 +157,23 @@ namespace ProjectTasis.InsideForm
                                     siswaBindingSource.EndEdit();
                                     test.SaveChangesAsync();
                                     panel.Enabled = false;
-                                    MessageBox.Show("Berhasil Menginput Data !", "Tabungan Siwa", MessageBoxButtons.OK);
+                                    if (MessageBox.Show("Berhasil Menginput Data !", "Tabungan Siwa", MessageBoxButtons.OK) == DialogResult.OK)
+                                    {
+                                        namaTextBox.Text = "";
+                                        kelasComboBox.SelectedIndex = 1;
+                                        alamatTextBox.Text = "";
+                                        iDTextBox.Text = "0";
+                                        btnCancel.Visible = false;
+                                        btnSimpan.Visible = false;
+                                        btnEdit.Visible = false;
+                                        btnEditShow.Visible = true;
+                                        btnTambah.Visible = true;
+                                    }
                                 }
                             }
                             catch (Exception)
                             {
-                                MessageBox.Show("Lihat lagi datanya, apakah ada yang belum ke input atau enggak ! Note : No Rekening tidak bisa di ubah atau edit.", "Tabungan Siswa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Lihat lagi datanya, apakah ada yang belum ke input atau enggak ! Note : Double Click kelas yang ingin di pilihnya !", "Tabungan Siswa", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                     }

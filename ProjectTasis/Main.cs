@@ -344,5 +344,10 @@ namespace ProjectTasis
             OpenChildForm(new InsideForm.DetailTransaksi(), sender);
             HideSubMenu();
         }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

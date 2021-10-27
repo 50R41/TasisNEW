@@ -8,6 +8,7 @@
     <Property Name="Nama" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Kelas" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Alamat" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Saldo" Type="Int64" Nullable="false" />
     <NavigationProperty Name="Transaksis" Relationship="Self.FK_Transaksi_Siswa" FromRole="Siswa" ToRole="Transaksi" />
   </EntityType>
   <EntityType Name="Transaksi">
@@ -19,6 +20,7 @@
     <Property Name="Tanggal" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Setoran" Type="Int64" Nullable="false" />
     <Property Name="Penarikan" Type="Int64" Nullable="false" />
+    <Property Name="Saldo" Type="Int64" annotation:StoreGeneratedPattern="Computed" />
     <NavigationProperty Name="Siswa" Relationship="Self.FK_Transaksi_Siswa" FromRole="Transaksi" ToRole="Siswa" />
   </EntityType>
   <Association Name="FK_Transaksi_Siswa">

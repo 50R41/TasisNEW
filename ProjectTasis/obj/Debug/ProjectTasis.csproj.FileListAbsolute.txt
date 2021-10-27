@@ -62,3 +62,4 @@ C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\P
 C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\bin\Debug\EntityFramework.xml
 C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\obj\Debug\ProjectTasis.InsideForm.TransaksiTabungan.resources
+C:\Users\hizak\Documents\ProjectTasis-02 ( 1 USER, BETA VERSION )\ProjectTasis\ProjectTasis\obj\Debug\ProjectTasis.csprojAssemblyReference.cache

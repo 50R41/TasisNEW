@@ -17,16 +17,16 @@ namespace ProjectTasis.InsideForm
         public DetailTransaksi()
         {
             InitializeComponent();
-            load_table();
+            Load_table();
         }
-        void load_table()
+        void Load_table()
         {
             try
             {
                 string ConString = ConfigurationManager.ConnectionStrings["TasisCon"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(ConString))
                 {
-                    SqlCommand cmd = new SqlCommand("SELECT Transaksi.No_Rekening, Siswa.Nama, Siswa.Kelas, Siswa.Alamat, SUM( Setoran - Penarikan ) AS Saldo FROM Transaksi JOIN Siswa on Siswa.ID = No_Rekening GROUP BY Transaksi.No_Rekening, Siswa.Nama, Siswa.Kelas , Siswa.Alamat", con);
+                    SqlCommand cmd = new SqlCommand("SELECT Transaksi.No_Rekening, Siswa.Nama, Transaksi.Tanggal, Transaksi.Setoran,Transaksi.Penarikan , Siswa.Saldo FROM Transaksi JOIN Siswa on Siswa.ID = No_Rekening GROUP BY Transaksi.No_Rekening, Siswa.Nama, Transaksi.Tanggal , Transaksi.Setoran , Transaksi.Penarikan, Siswa.Saldo", con);
                     SqlDataAdapter sda = new SqlDataAdapter();
                     DataTable dt = new DataTable();
                     sda.SelectCommand = cmd;
@@ -34,7 +34,10 @@ namespace ProjectTasis.InsideForm
                     BindingSource bs = new BindingSource();
                     bs.DataSource = dt;
                     dataGridView1.DataSource = bs;
-                    dataGridView1.Columns[4].DefaultCellStyle.Format = "Rp###,###";
+                    dataGridView1.Columns[0].HeaderText = "No Rekening";
+                    dataGridView1.Columns[4].DefaultCellStyle.Format = "C0";
+                    dataGridView1.Columns[3].DefaultCellStyle.Format = "C0";
+                    dataGridView1.Columns[5].DefaultCellStyle.Format = "Rp###,###";
                     sda.Update(dt);
                 }
             }
@@ -42,7 +45,6 @@ namespace ProjectTasis.InsideForm
             {
                 MessageBox.Show(ead.Message);
             }
-
         }
         private void LoadTheme()
         {
@@ -92,30 +94,30 @@ namespace ProjectTasis.InsideForm
         }
         private void btnCariNama_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["TasisCon"].ConnectionString))
-            //    {
-            //        if (cn.State == ConnectionState.Closed)
-            //        {
-            //            cn.Open();
-            //            using (DataTable dt = new DataTable("Transaksi"))
-            //            {
-            //                using (SqlCommand cmd = new SqlCommand("SELECT Transaksi.No_Rekening, Siswa.Nama, Siswa.Kelas, Siswa.Alamat, SUM( Setoran - Penarikan ) AS Saldo FROM Transaksi JOIN Siswa on Siswa.ID = No_Rekening GROUP BY Transaksi.No_Rekening, Siswa.Nama, Siswa.Kelas , Siswa.Alamat WHERE Siswa.ID=@ID", cn))
-            //                {
-            //                    cmd.Parameters.AddWithValue("ID", txtCari.Text);
-            //                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            //                    adapter.Fill(dt);
-            //                    dataGridView1.DataSource = dt;
-            //                }
-            //            }
-            //        }
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Tabungan Siswa", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            try
+            {
+                using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["TasisCon"].ConnectionString))
+                {
+                    if (cn.State == ConnectionState.Closed)
+                    {
+                        cn.Open();
+                        using (DataTable dt = new DataTable("Transaksi"))
+                        {
+                            using (SqlCommand cmd = new SqlCommand("SELECT Transaksi.No_Rekening, Siswa.Nama, Transaksi.Tanggal, Transaksi.Setoran,Transaksi.Penarikan , Siswa.Saldo FROM Transaksi JOIN Siswa on Siswa.ID = No_Rekening WHERE Siswa.ID=@ID GROUP BY Transaksi.No_Rekening, Siswa.Nama, Transaksi.Tanggal , Transaksi.Setoran , Transaksi.Penarikan, Siswa.Saldo", cn))
+                            {
+                                cmd.Parameters.AddWithValue("ID", txtCari.Text);
+                                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                                adapter.Fill(dt);
+                                dataGridView1.DataSource = dt;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Tabungan Siswa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

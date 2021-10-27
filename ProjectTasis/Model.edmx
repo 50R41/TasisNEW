@@ -13,6 +13,7 @@
           <Property Name="Nama" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Kelas" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="Alamat" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="Saldo" Type="bigint" Nullable="false" />
         </EntityType>
         <EntityType Name="Transaksi">
           <Key>
@@ -23,6 +24,7 @@
           <Property Name="Tanggal" Type="date" Nullable="false" />
           <Property Name="Setoran" Type="bigint" Nullable="false" />
           <Property Name="Penarikan" Type="bigint" Nullable="false" />
+          <Property Name="Saldo" Type="bigint" StoreGeneratedPattern="Computed" />
         </EntityType>
         <Association Name="FK_Transaksi_Siswa">
           <End Role="Siswa" Type="Self.Siswa" Multiplicity="0..1" />
@@ -57,6 +59,7 @@
           <Property Name="Nama" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Kelas" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Alamat" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Saldo" Type="Int64" Nullable="false" />
           <NavigationProperty Name="Transaksis" Relationship="Self.FK_Transaksi_Siswa" FromRole="Siswa" ToRole="Transaksi" />
         </EntityType>
         <EntityType Name="Transaksi">
@@ -68,6 +71,7 @@
           <Property Name="Tanggal" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Setoran" Type="Int64" Nullable="false" />
           <Property Name="Penarikan" Type="Int64" Nullable="false" />
+          <Property Name="Saldo" Type="Int64" annotation:StoreGeneratedPattern="Computed" />
           <NavigationProperty Name="Siswa" Relationship="Self.FK_Transaksi_Siswa" FromRole="Transaksi" ToRole="Siswa" />
         </EntityType>
         <Association Name="FK_Transaksi_Siswa">
@@ -103,6 +107,7 @@
                 <ScalarProperty Name="Nama" ColumnName="Nama" />
                 <ScalarProperty Name="Kelas" ColumnName="Kelas" />
                 <ScalarProperty Name="Alamat" ColumnName="Alamat" />
+                <ScalarProperty Name="Saldo" ColumnName="Saldo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -114,6 +119,7 @@
                 <ScalarProperty Name="Tanggal" ColumnName="Tanggal" />
                 <ScalarProperty Name="Setoran" ColumnName="Setoran" />
                 <ScalarProperty Name="Penarikan" ColumnName="Penarikan" />
+                <ScalarProperty Name="Saldo" ColumnName="Saldo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

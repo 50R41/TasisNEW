@@ -35,6 +35,7 @@
             this.btnMinimize = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnEXIT = new System.Windows.Forms.Button();
             this.panelMenuTransaksiSubMenu = new System.Windows.Forms.Panel();
             this.btnDetailTranskasi = new System.Windows.Forms.Button();
             this.btnTransaksiSub = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.panelMenuSiswaSubMenu = new System.Windows.Forms.Panel();
             this.btnImport = new System.Windows.Forms.Button();
             this.btnTambahSiswa = new System.Windows.Forms.Button();
-            this.btnEXIT = new System.Windows.Forms.Button();
             this.btnSiswa = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.btnSlide = new System.Windows.Forms.Button();
@@ -152,6 +152,27 @@
             this.panelMenu.Size = new System.Drawing.Size(131, 339);
             this.panelMenu.TabIndex = 3;
             this.panelMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelMenu_MouseDown);
+            // 
+            // btnEXIT
+            // 
+            this.btnEXIT.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnEXIT.FlatAppearance.BorderSize = 0;
+            this.btnEXIT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEXIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEXIT.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnEXIT.Image = global::ProjectTasis.Properties.Resources.Tak_berjudul27_20210825201208_24x241;
+            this.btnEXIT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEXIT.Location = new System.Drawing.Point(0, 279);
+            this.btnEXIT.Name = "btnEXIT";
+            this.btnEXIT.Padding = new System.Windows.Forms.Padding(12, 0, 0, 15);
+            this.btnEXIT.Size = new System.Drawing.Size(131, 60);
+            this.btnEXIT.TabIndex = 7;
+            this.btnEXIT.Tag = "Keluar";
+            this.btnEXIT.Text = "  Keluar";
+            this.btnEXIT.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEXIT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEXIT.UseVisualStyleBackColor = true;
+            this.btnEXIT.Click += new System.EventHandler(this.btnEXIT_Click);
             // 
             // panelMenuTransaksiSubMenu
             // 
@@ -273,27 +294,6 @@
             this.btnTambahSiswa.UseVisualStyleBackColor = true;
             this.btnTambahSiswa.Click += new System.EventHandler(this.btnTambahSiswa_Click);
             // 
-            // btnEXIT
-            // 
-            this.btnEXIT.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnEXIT.FlatAppearance.BorderSize = 0;
-            this.btnEXIT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEXIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEXIT.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnEXIT.Image = global::ProjectTasis.Properties.Resources.Tak_berjudul27_20210825201208_24x241;
-            this.btnEXIT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEXIT.Location = new System.Drawing.Point(0, 279);
-            this.btnEXIT.Name = "btnEXIT";
-            this.btnEXIT.Padding = new System.Windows.Forms.Padding(12, 0, 0, 15);
-            this.btnEXIT.Size = new System.Drawing.Size(131, 60);
-            this.btnEXIT.TabIndex = 7;
-            this.btnEXIT.Tag = "Keluar";
-            this.btnEXIT.Text = "  Keluar";
-            this.btnEXIT.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEXIT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEXIT.UseVisualStyleBackColor = true;
-            this.btnEXIT.Click += new System.EventHandler(this.btnEXIT_Click);
-            // 
             // btnSiswa
             // 
             this.btnSiswa.Dock = System.Windows.Forms.DockStyle.Top;
@@ -366,6 +366,7 @@
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             this.panelMenu.ResumeLayout(false);

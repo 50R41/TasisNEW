@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnTransaksi = new System.Windows.Forms.Button();
@@ -46,24 +43,15 @@
             this.panel = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtCari = new System.Windows.Forms.TextBox();
-            this.tasisDataSet = new ProjectTasis.TasisDataSet();
-            this.transaksiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.transaksiTableAdapter = new ProjectTasis.TasisDataSetTableAdapters.TransaksiTableAdapter();
-            this.noRekeningDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tanggalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.setoranDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.penarikanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tasisDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRefresh
             // 
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Location = new System.Drawing.Point(373, 138);
+            this.btnRefresh.Location = new System.Drawing.Point(373, 137);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(58, 25);
             this.btnRefresh.TabIndex = 31;
@@ -78,22 +66,14 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.noRekeningDataGridViewTextBoxColumn,
-            this.tanggalDataGridViewTextBoxColumn,
-            this.setoranDataGridViewTextBoxColumn,
-            this.penarikanDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.transaksiBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(0, 170);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(501, 154);
             this.dataGridView1.TabIndex = 28;
-            this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
             // 
             // btnTransaksi
             // 
@@ -111,7 +91,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 145);
+            this.label4.Location = new System.Drawing.Point(3, 144);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 13);
             this.label4.TabIndex = 39;
@@ -131,8 +111,9 @@
             this.txtNoRekening.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNoRekening.Location = new System.Drawing.Point(94, 19);
+            this.txtNoRekening.MaximumSize = new System.Drawing.Size(240, 20);
             this.txtNoRekening.Name = "txtNoRekening";
-            this.txtNoRekening.Size = new System.Drawing.Size(222, 20);
+            this.txtNoRekening.Size = new System.Drawing.Size(223, 20);
             this.txtNoRekening.TabIndex = 36;
             // 
             // comboBoxTransaksi
@@ -145,8 +126,9 @@
             "Setoran",
             "Penarikan"});
             this.comboBoxTransaksi.Location = new System.Drawing.Point(94, 58);
+            this.comboBoxTransaksi.MaximumSize = new System.Drawing.Size(237, 0);
             this.comboBoxTransaksi.Name = "comboBoxTransaksi";
-            this.comboBoxTransaksi.Size = new System.Drawing.Size(222, 21);
+            this.comboBoxTransaksi.Size = new System.Drawing.Size(220, 21);
             this.comboBoxTransaksi.TabIndex = 41;
             // 
             // label2
@@ -172,8 +154,9 @@
             this.txtNominal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNominal.Location = new System.Drawing.Point(94, 94);
+            this.txtNominal.MaximumSize = new System.Drawing.Size(240, 20);
             this.txtNominal.Name = "txtNominal";
-            this.txtNominal.Size = new System.Drawing.Size(222, 20);
+            this.txtNominal.Size = new System.Drawing.Size(223, 20);
             this.txtNominal.TabIndex = 42;
             // 
             // btnSubmit
@@ -194,7 +177,7 @@
             this.btnCariNama.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCariNama.BackColor = System.Drawing.SystemColors.Control;
             this.btnCariNama.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCariNama.Location = new System.Drawing.Point(322, 139);
+            this.btnCariNama.Location = new System.Drawing.Point(322, 138);
             this.btnCariNama.Name = "btnCariNama";
             this.btnCariNama.Size = new System.Drawing.Size(45, 25);
             this.btnCariNama.TabIndex = 46;
@@ -214,7 +197,7 @@
             this.panel.Controls.Add(this.comboBoxTransaksi);
             this.panel.Location = new System.Drawing.Point(0, 4);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(319, 126);
+            this.panel.Size = new System.Drawing.Size(334, 126);
             this.panel.TabIndex = 45;
             // 
             // btnCancel
@@ -236,68 +219,25 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCari.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtCari.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtCari.Location = new System.Drawing.Point(94, 143);
+            this.txtCari.Location = new System.Drawing.Point(94, 140);
+            this.txtCari.MaximumSize = new System.Drawing.Size(240, 20);
             this.txtCari.Name = "txtCari";
             this.txtCari.Size = new System.Drawing.Size(215, 20);
             this.txtCari.TabIndex = 49;
-            // 
-            // tasisDataSet
-            // 
-            this.tasisDataSet.DataSetName = "TasisDataSet";
-            this.tasisDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // transaksiBindingSource
-            // 
-            this.transaksiBindingSource.DataMember = "Transaksi";
-            this.transaksiBindingSource.DataSource = this.tasisDataSet;
-            // 
-            // transaksiTableAdapter
-            // 
-            this.transaksiTableAdapter.ClearBeforeFill = true;
-            // 
-            // noRekeningDataGridViewTextBoxColumn
-            // 
-            this.noRekeningDataGridViewTextBoxColumn.DataPropertyName = "No_Rekening";
-            this.noRekeningDataGridViewTextBoxColumn.HeaderText = "No Rekening";
-            this.noRekeningDataGridViewTextBoxColumn.Name = "noRekeningDataGridViewTextBoxColumn";
-            // 
-            // tanggalDataGridViewTextBoxColumn
-            // 
-            this.tanggalDataGridViewTextBoxColumn.DataPropertyName = "Tanggal";
-            this.tanggalDataGridViewTextBoxColumn.HeaderText = "Tanggal";
-            this.tanggalDataGridViewTextBoxColumn.Name = "tanggalDataGridViewTextBoxColumn";
-            // 
-            // setoranDataGridViewTextBoxColumn
-            // 
-            this.setoranDataGridViewTextBoxColumn.DataPropertyName = "Setoran";
-            dataGridViewCellStyle1.Format = "C0";
-            dataGridViewCellStyle1.NullValue = null;
-            this.setoranDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.setoranDataGridViewTextBoxColumn.HeaderText = "Setoran";
-            this.setoranDataGridViewTextBoxColumn.Name = "setoranDataGridViewTextBoxColumn";
-            // 
-            // penarikanDataGridViewTextBoxColumn
-            // 
-            this.penarikanDataGridViewTextBoxColumn.DataPropertyName = "Penarikan";
-            dataGridViewCellStyle2.Format = "C0";
-            dataGridViewCellStyle2.NullValue = null;
-            this.penarikanDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.penarikanDataGridViewTextBoxColumn.HeaderText = "Penarikan";
-            this.penarikanDataGridViewTextBoxColumn.Name = "penarikanDataGridViewTextBoxColumn";
             // 
             // TransaksiTabungan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(499, 325);
-            this.Controls.Add(this.txtCari);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnCariNama);
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnTransaksi);
+            this.Controls.Add(this.txtCari);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel);
             this.Name = "TransaksiTabungan";
             this.Text = "Transaksi";
@@ -305,8 +245,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tasisDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transaksiBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -329,12 +267,5 @@
         private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox txtCari;
-        private TasisDataSet tasisDataSet;
-        private System.Windows.Forms.BindingSource transaksiBindingSource;
-        private TasisDataSetTableAdapters.TransaksiTableAdapter transaksiTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn noRekeningDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tanggalDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn setoranDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn penarikanDataGridViewTextBoxColumn;
     }
 }

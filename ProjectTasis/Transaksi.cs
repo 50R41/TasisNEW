@@ -19,6 +19,7 @@ namespace ProjectTasis
         public System.DateTime Tanggal { get; set; }
         public long Setoran { get; set; }
         public long Penarikan { get; set; }
+        public Nullable<long> Saldo { get; set; }
     
         public virtual Siswa Siswa { get; set; }
     }

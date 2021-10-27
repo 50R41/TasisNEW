@@ -4,9 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c0fb189f74a2454c97b8ed67560add24" Name="Diagram1">
+      <Diagram DiagramId="b2cc4878010345a4ad42cd7ae320fd23" Name="Diagram1">
         <EntityTypeShape EntityType="TasisModel.Siswa" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="TasisModel.Transaksi" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TasisModel.Transaksi" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="TasisModel.FK_Transaksi_Siswa" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
