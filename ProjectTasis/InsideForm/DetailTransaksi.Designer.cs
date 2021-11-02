@@ -47,6 +47,7 @@
             this.btnCetak.TabIndex = 42;
             this.btnCetak.Text = "Cetak";
             this.btnCetak.UseVisualStyleBackColor = false;
+            this.btnCetak.Click += new System.EventHandler(this.btnCetak_Click);
             // 
             // dataGridView1
             // 

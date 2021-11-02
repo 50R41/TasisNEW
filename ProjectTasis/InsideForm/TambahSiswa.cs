@@ -38,7 +38,6 @@ namespace ProjectTasis.InsideForm
 
         private void btnTambah_Click(object sender, EventArgs e)
         {
-
             this.kelasComboBox.SelectedIndex = -1;
             try
             {
@@ -77,7 +76,6 @@ namespace ProjectTasis.InsideForm
             LoadTheme();
         }
         private void Auto()
-
         {
             try
             {
@@ -282,7 +280,6 @@ namespace ProjectTasis.InsideForm
             {
                 MessageBox.Show(ms.Message, "Tabungan Siswa", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
         }
 
         private void dataGridView1_KeyDown(object sender, KeyEventArgs e)

@@ -35,6 +35,12 @@
             System.Windows.Forms.Label iDLabel;
             this.btnRefresh = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kelasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alamatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.siswaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tasisDataSet = new ProjectTasis.TasisDataSet();
             this.btnTambah = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,21 +54,15 @@
             this.panel = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnEditShow = new System.Windows.Forms.Button();
-            this.tasisDataSet = new ProjectTasis.TasisDataSet();
-            this.siswaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.siswaTableAdapter = new ProjectTasis.TasisDataSetTableAdapters.SiswaTableAdapter();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kelasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alamatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             alamatLabel = new System.Windows.Forms.Label();
             kelasLabel = new System.Windows.Forms.Label();
             namaLabel = new System.Windows.Forms.Label();
             iDLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tasisDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.siswaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tasisDataSet)).BeginInit();
+            this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // alamatLabel
@@ -144,6 +144,41 @@
             this.dataGridView1.TabIndex = 37;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "No Rekening";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // namaDataGridViewTextBoxColumn
+            // 
+            this.namaDataGridViewTextBoxColumn.DataPropertyName = "Nama";
+            this.namaDataGridViewTextBoxColumn.HeaderText = "Nama";
+            this.namaDataGridViewTextBoxColumn.Name = "namaDataGridViewTextBoxColumn";
+            // 
+            // kelasDataGridViewTextBoxColumn
+            // 
+            this.kelasDataGridViewTextBoxColumn.DataPropertyName = "Kelas";
+            this.kelasDataGridViewTextBoxColumn.HeaderText = "Kelas";
+            this.kelasDataGridViewTextBoxColumn.Name = "kelasDataGridViewTextBoxColumn";
+            // 
+            // alamatDataGridViewTextBoxColumn
+            // 
+            this.alamatDataGridViewTextBoxColumn.DataPropertyName = "Alamat";
+            this.alamatDataGridViewTextBoxColumn.HeaderText = "Alamat";
+            this.alamatDataGridViewTextBoxColumn.Name = "alamatDataGridViewTextBoxColumn";
+            // 
+            // siswaBindingSource
+            // 
+            this.siswaBindingSource.DataMember = "Siswa";
+            this.siswaBindingSource.DataSource = this.tasisDataSet;
+            // 
+            // tasisDataSet
+            // 
+            this.tasisDataSet.DataSetName = "TasisDataSet";
+            this.tasisDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnTambah
             // 
@@ -332,44 +367,9 @@
             this.btnEditShow.UseVisualStyleBackColor = true;
             this.btnEditShow.Click += new System.EventHandler(this.btnEditShow_Click);
             // 
-            // tasisDataSet
-            // 
-            this.tasisDataSet.DataSetName = "TasisDataSet";
-            this.tasisDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // siswaBindingSource
-            // 
-            this.siswaBindingSource.DataMember = "Siswa";
-            this.siswaBindingSource.DataSource = this.tasisDataSet;
-            // 
             // siswaTableAdapter
             // 
             this.siswaTableAdapter.ClearBeforeFill = true;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "No Rekening";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // namaDataGridViewTextBoxColumn
-            // 
-            this.namaDataGridViewTextBoxColumn.DataPropertyName = "Nama";
-            this.namaDataGridViewTextBoxColumn.HeaderText = "Nama";
-            this.namaDataGridViewTextBoxColumn.Name = "namaDataGridViewTextBoxColumn";
-            // 
-            // kelasDataGridViewTextBoxColumn
-            // 
-            this.kelasDataGridViewTextBoxColumn.DataPropertyName = "Kelas";
-            this.kelasDataGridViewTextBoxColumn.HeaderText = "Kelas";
-            this.kelasDataGridViewTextBoxColumn.Name = "kelasDataGridViewTextBoxColumn";
-            // 
-            // alamatDataGridViewTextBoxColumn
-            // 
-            this.alamatDataGridViewTextBoxColumn.DataPropertyName = "Alamat";
-            this.alamatDataGridViewTextBoxColumn.HeaderText = "Alamat";
-            this.alamatDataGridViewTextBoxColumn.Name = "alamatDataGridViewTextBoxColumn";
             // 
             // TambahSiswa
             // 
@@ -391,10 +391,10 @@
             this.Text = "Tambah Siswa";
             this.Load += new System.EventHandler(this.DataSiswa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.siswaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tasisDataSet)).EndInit();
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tasisDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.siswaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
