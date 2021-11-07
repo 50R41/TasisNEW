@@ -349,5 +349,10 @@ namespace ProjectTasis
         {
 
         }
+
+        private void Main_Resize(object sender, EventArgs e)
+        {
+            AdjustForm();
+        }
     }
 }

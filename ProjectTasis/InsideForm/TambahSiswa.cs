@@ -51,10 +51,6 @@ namespace ProjectTasis.InsideForm
                 panel.Enabled = true;
                 btnEditShow.Visible = false;
                 namaTextBox.Focus();
-                Siswa s = new Siswa();
-                test.Siswas.Add(s);
-                siswaBindingSource.Add(s);
-                siswaBindingSource.MoveLast();
             }
             catch (Exception ex )
             {
@@ -152,7 +148,11 @@ namespace ProjectTasis.InsideForm
                             {
                                 if (MessageBox.Show("Apakah kamu yakin dan sudah di pastikan semua datanya benar ?", "Tabungan Siwa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                                 {
-                                    siswaBindingSource.EndEdit();
+                                    Siswa s = new Siswa();
+                                    s.Nama = namaTextBox.Text;
+                                    s.Kelas = kelasComboBox.Text;
+                                    s.Alamat = alamatTextBox.Text;
+                                    test.Siswas.Add(s);
                                     test.SaveChangesAsync();
                                     panel.Enabled = false;
                                     if (MessageBox.Show("Berhasil Menginput Data !", "Tabungan Siwa", MessageBoxButtons.OK) == DialogResult.OK)
@@ -232,9 +232,9 @@ namespace ProjectTasis.InsideForm
                             cn.Open();
                             using (DataTable dt = new DataTable("Siswa"))
                             {
-                               using (SqlCommand cmds = new SqlCommand("UPDATE Siswa SET Nama=@Nama , Kelas=@Kelas , Alamat=Alamat WHERE ID=@No_Rekening", cn))
+                               using (SqlCommand cmds = new SqlCommand("UPDATE Siswa SET Nama=@Nama , Kelas=@Kelas , Alamat=@Alamat WHERE ID=@id", cn))
                                {
-                                    cmds.Parameters.AddWithValue("No_Rekening", iDTextBox.Text );
+                                    cmds.Parameters.AddWithValue("id", iDTextBox.Text );
                                     cmds.Parameters.AddWithValue("Nama", namaTextBox.Text );
                                     cmds.Parameters.AddWithValue("Kelas" , kelasComboBox.Text);
                                     cmds.Parameters.AddWithValue("Alamat" , alamatTextBox.Text);
@@ -254,8 +254,6 @@ namespace ProjectTasis.InsideForm
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            TambahSiswa ss = new TambahSiswa();
-            ss.UpdateBounds();
             try
             {
                 using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["TasisCon"].ConnectionString))

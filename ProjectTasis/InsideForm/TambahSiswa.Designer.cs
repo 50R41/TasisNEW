@@ -124,6 +124,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -227,8 +228,8 @@
             // 
             this.alamatTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.alamatTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.siswaBindingSource, "Alamat", true));
             this.alamatTextBox.Location = new System.Drawing.Point(92, 119);
+            this.alamatTextBox.MaximumSize = new System.Drawing.Size(600, 51);
             this.alamatTextBox.Multiline = true;
             this.alamatTextBox.Name = "alamatTextBox";
             this.alamatTextBox.Size = new System.Drawing.Size(215, 51);
@@ -239,7 +240,6 @@
             this.kelasComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.kelasComboBox.BackColor = System.Drawing.SystemColors.Window;
-            this.kelasComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.siswaBindingSource, "Kelas", true));
             this.kelasComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.kelasComboBox.FormattingEnabled = true;
             this.kelasComboBox.Items.AddRange(new object[] {
@@ -274,19 +274,20 @@
             "XII OTKP 1",
             "XII OTKP 2 "});
             this.kelasComboBox.Location = new System.Drawing.Point(92, 90);
+            this.kelasComboBox.MaximumSize = new System.Drawing.Size(230, 0);
             this.kelasComboBox.Name = "kelasComboBox";
-            this.kelasComboBox.Size = new System.Drawing.Size(215, 21);
+            this.kelasComboBox.Size = new System.Drawing.Size(140, 21);
             this.kelasComboBox.TabIndex = 39;
             // 
             // namaTextBox
             // 
             this.namaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.namaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.siswaBindingSource, "Nama", true));
             this.namaTextBox.Location = new System.Drawing.Point(92, 56);
+            this.namaTextBox.MaximumSize = new System.Drawing.Size(600, 20);
             this.namaTextBox.Multiline = true;
             this.namaTextBox.Name = "namaTextBox";
-            this.namaTextBox.Size = new System.Drawing.Size(215, 25);
+            this.namaTextBox.Size = new System.Drawing.Size(215, 20);
             this.namaTextBox.TabIndex = 40;
             // 
             // btnCariNama
@@ -306,8 +307,8 @@
             // 
             this.iDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.siswaBindingSource, "ID", true));
             this.iDTextBox.Location = new System.Drawing.Point(92, 23);
+            this.iDTextBox.MaximumSize = new System.Drawing.Size(600, 20);
             this.iDTextBox.Name = "iDTextBox";
             this.iDTextBox.ReadOnly = true;
             this.iDTextBox.Size = new System.Drawing.Size(215, 20);
@@ -376,7 +377,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(499, 325);
-            this.Controls.Add(this.btnEditShow);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSimpan);
@@ -387,6 +387,7 @@
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnTambah);
+            this.Controls.Add(this.btnEditShow);
             this.Name = "TambahSiswa";
             this.Text = "Tambah Siswa";
             this.Load += new System.EventHandler(this.DataSiswa_Load);

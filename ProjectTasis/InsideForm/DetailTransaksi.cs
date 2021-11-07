@@ -34,9 +34,9 @@ namespace ProjectTasis.InsideForm
                     BindingSource bs = new BindingSource();
                     bs.DataSource = dt;
                     dataGridView1.DataSource = bs;
-                    dataGridView1.Columns[0].HeaderText = "No Rekening";
-                    dataGridView1.Columns[4].DefaultCellStyle.Format = "C0";
-                    dataGridView1.Columns[3].DefaultCellStyle.Format = "C0";
+                    dataGridView1.Columns["No_Rekening"].HeaderText = "No Rekening";
+                    dataGridView1.Columns[4].DefaultCellStyle.Format = "Rp###,###";
+                    dataGridView1.Columns[3].DefaultCellStyle.Format = "Rp###,###";
                     dataGridView1.Columns[5].DefaultCellStyle.Format = "Rp###,###";
                     sda.Update(dt);
                 }
@@ -109,6 +109,11 @@ namespace ProjectTasis.InsideForm
                                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                                 adapter.Fill(dt);
                                 dataGridView1.DataSource = dt;
+                                dataGridView1.Columns["No_Rekening"].HeaderText = "No Rekening";
+                                dataGridView1.Columns[4].DefaultCellStyle.Format = "Rp###,###";
+                                dataGridView1.Columns[3].DefaultCellStyle.Format = "Rp###,###";
+                                dataGridView1.Columns[5].DefaultCellStyle.Format = "Rp###,###";
+                                adapter.Update(dt);
                             }
                         }
                     }
@@ -129,24 +134,35 @@ namespace ProjectTasis.InsideForm
 
         private void btnCetak_Click(object sender, EventArgs e)
         {
-            copyAlltoClipboard();
-            Microsoft.Office.Interop.Excel.Application xlexcel;
-            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
-            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
-            object misValue = System.Reflection.Missing.Value;
-            xlexcel = new Microsoft.Office.Interop.Excel.Application();
-            xlexcel.Visible = true;
-            xlWorkBook = xlexcel.Workbooks.Add(misValue);
-            xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
-            xlWorkSheet.Cells[1, 2] = "No Rekening";
-            xlWorkSheet.Cells[1, 3] = "Nama";
-            xlWorkSheet.Cells[1, 4] = "Tanggal";
-            xlWorkSheet.Cells[1, 5] = "Setoran";
-            xlWorkSheet.Cells[1, 6] = "Penarikan";
-            xlWorkSheet.Cells[1, 7] = "Saldo";
-            Microsoft.Office.Interop.Excel.Range CR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.Cells[2, 1];
-            CR.Select();
-            xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
+            if (MessageBox.Show("Apakah anda ingin mengekspor ke excel ?" , "Tabungan Siswa" , MessageBoxButtons.YesNo , MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                try
+                {
+                    copyAlltoClipboard();
+                    Microsoft.Office.Interop.Excel.Application xlexcel;
+                    Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+                    Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+                    object misValue = System.Reflection.Missing.Value;
+                    xlexcel = new Microsoft.Office.Interop.Excel.Application();
+                    xlexcel.Visible = true;
+                    xlWorkBook = xlexcel.Workbooks.Add(misValue);
+                    xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+                    xlWorkSheet.EnableSelection = Microsoft.Office.Interop.Excel.XlEnableSelection.xlNoSelection;
+                    xlWorkSheet.Cells[1, 2] = "No Rekening";
+                    xlWorkSheet.Cells[1, 3] = "Nama";
+                    xlWorkSheet.Cells[1, 4] = "Tanggal";
+                    xlWorkSheet.Cells[1, 5] = "Setoran";
+                    xlWorkSheet.Cells[1, 6] = "Penarikan";
+                    xlWorkSheet.Cells[1, 7] = "Saldo";
+                    Microsoft.Office.Interop.Excel.Range CR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.Cells[2, 1];
+                    CR.Select();
+                    xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
+                }
+                catch (Exception)
+                {
+                    //MessageBox.Show("Tunggu sebentar karena excelnya masih loading !" , "Tabungan Siswa" , MessageBoxButtons.OK , MessageBoxIcon.Information);
+                }
+            }
         }
     }
 }

@@ -198,11 +198,12 @@ namespace ProjectTasis.InsideForm
                                        cmds.Parameters.AddWithValue("No_Rekening", txtNoRekening.Text);
                                        cmds.Parameters.AddWithValue("Setoran", txtNominal.Text);
                                        cmds.ExecuteNonQuery();
-                                      if (MessageBox.Show("Berhasil melakukan setoran sebesar : Rp " + txtNominal.Text + "    Note : Jangan lupa tekan tombol refresh !", "Tabungan Siswa", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                                      if (MessageBox.Show("Berhasil melakukan setoran sebesar : Rp " + txtNominal.Text + "", "Tabungan Siswa", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
                                       {
                                         txtNoRekening.Text = "";
                                         txtNominal.Text = "";
                                         comboBoxTransaksi.SelectedIndex = -1;
+                                        btnRefresh.PerformClick();
                                       } 
                                  }
                               }
@@ -213,11 +214,12 @@ namespace ProjectTasis.InsideForm
                                         cmdpenarikan.Parameters.AddWithValue("No_Rekening", txtNoRekening.Text);
                                         cmdpenarikan.Parameters.AddWithValue("Penarikan", txtNominal.Text);
                                         cmdpenarikan.ExecuteNonQuery();
-                                         if (MessageBox.Show("Berhasil melakukan penarikan sebesar : Rp " + txtNominal.Text + "    Note : Jangan lupa tekan tombol refresh !", "Tabungan Siswa", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                                         if (MessageBox.Show("Berhasil melakukan penarikan sebesar : Rp " + txtNominal.Text + "", "Tabungan Siswa", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
                                          {
                                              txtNoRekening.Text = "";
                                              txtNominal.Text = "";
                                              comboBoxTransaksi.SelectedIndex = -1;
+                                             btnRefresh.PerformClick();
                                          }
                                     }
                               }

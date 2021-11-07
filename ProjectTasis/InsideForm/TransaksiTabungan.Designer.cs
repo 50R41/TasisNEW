@@ -111,7 +111,7 @@
             this.txtNoRekening.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNoRekening.Location = new System.Drawing.Point(94, 19);
-            this.txtNoRekening.MaximumSize = new System.Drawing.Size(240, 20);
+            this.txtNoRekening.MaximumSize = new System.Drawing.Size(600, 20);
             this.txtNoRekening.Name = "txtNoRekening";
             this.txtNoRekening.Size = new System.Drawing.Size(223, 20);
             this.txtNoRekening.TabIndex = 36;
@@ -126,9 +126,9 @@
             "Setoran",
             "Penarikan"});
             this.comboBoxTransaksi.Location = new System.Drawing.Point(94, 58);
-            this.comboBoxTransaksi.MaximumSize = new System.Drawing.Size(237, 0);
+            this.comboBoxTransaksi.MaximumSize = new System.Drawing.Size(220, 0);
             this.comboBoxTransaksi.Name = "comboBoxTransaksi";
-            this.comboBoxTransaksi.Size = new System.Drawing.Size(220, 21);
+            this.comboBoxTransaksi.Size = new System.Drawing.Size(129, 21);
             this.comboBoxTransaksi.TabIndex = 41;
             // 
             // label2
@@ -154,7 +154,7 @@
             this.txtNominal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNominal.Location = new System.Drawing.Point(94, 94);
-            this.txtNominal.MaximumSize = new System.Drawing.Size(240, 20);
+            this.txtNominal.MaximumSize = new System.Drawing.Size(600, 20);
             this.txtNominal.Name = "txtNominal";
             this.txtNominal.Size = new System.Drawing.Size(223, 20);
             this.txtNominal.TabIndex = 42;
